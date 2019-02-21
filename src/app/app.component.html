@@ -4,9 +4,37 @@
     Welcome to {{title}}!
   </h1>
 </div>
-<div fxLayout="row" fxLayoutAlign="center center">
-  <button fxFlexAlign="center" mat-raised-button color="primary">Primary</button>
-  <button fxFlexAlign="center" mat-raised-button color="primary">Primary</button>
+<!--<div fxLayout="row" fxLayoutAlign="center center">-->
+<mat-list>
+  <mat-divider></mat-divider>
+  <h3 matSubheader>Messages</h3>
+  <mat-list-item *ngFor="let message of messages">
+    <h3 matLine> {{message.from}} </h3>
+    <p matLine class="demo-2"> {{message.content}} </p>
+    <div fxLayout="row" fxLayoutGap="20px">
+      <button mat-raised-button color="primary">Editar</button>
+      <button mat-raised-button color="warn">Eliminar</button>
+    </div>
+    <!--<p matLine class="demo-2"> {{message.content}} </p>-->
+  </mat-list-item>
+  <mat-divider></mat-divider>
+</mat-list>
+<div fxLayout="row" fxLayoutAlign="end center" style="margin-top: 30px;">
+  <button mat-raised-button color="primary">Adicionar</button>
 </div>
+
+  <!--<mat-list>-->
+    <!--<mat-list-item *ngFor="let message of messages">-->
+      <!--&lt;!&ndash;<mat-icon matListIcon>folder</mat-icon>&ndash;&gt;-->
+      <!--<h3 matLine> {{message.from}} </h3>-->
+      <!--<p matLine>-->
+        <!--<span> {{message.subject}} </span>-->
+        <!--<span class="demo-2"> &#45;&#45; {{message.content}} </span>-->
+      <!--</p>-->
+    <!--</mat-list-item>-->
+  <!--</mat-list>-->
+  <!--<button fxFlexAlign="center" mat-raised-button color="primary">Primary</button>-->
+  <!--<button fxFlexAlign="center" mat-raised-button color="primary">Primary</button>-->
+<!--</div>-->
 
 <router-outlet></router-outlet>

@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatCardModule, MatListModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -19,6 +19,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FlexLayoutModule,
     BrowserAnimationsModule,
     MatCardModule,
+    MatListModule,
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
