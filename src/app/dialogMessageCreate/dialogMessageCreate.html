@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>Crear Mensaje</h2>
+<mat-dialog-content>
+  <form (ngSubmit)="onSubmit()" #f="ngForm" class="example-form">
+    <div fxLayout="column">
+      <mat-form-field class="example-full-width">
+        <input matInput ngModel name="from" id="from" placeholder="From" required>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput ngModel name="subject" id="subject" placeholder="Subject" required>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput ngModel name="content" id="content" placeholder="Content" required>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" class="m-t-10" fxLayoutGap="10px" fxLayoutAlign="end center">
+      <button mat-button [mat-dialog-close]="true">Cancelar</button>
+      <button mat-raised-button color="primary" [disabled]="!f.valid" type="submit">Submit</button>
+    </div>
+  </form>
+</mat-dialog-content>

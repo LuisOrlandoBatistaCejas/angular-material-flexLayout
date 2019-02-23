@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>{{item.from}}</h2>
+<mat-dialog-content>
+  <form (ngSubmit)="onSubmit()" #f="ngForm" class="example-form">
+    <div fxLayout="column">
+      <mat-form-field class="example-full-width">
+        <input matInput [ngModel]="item.from" name="from" id="from" placeholder="From" required>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput [ngModel]="item.subject" name="subject" id="subject" placeholder="Subject" required>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput [ngModel]="item.content" name="content" id="content" placeholder="Content" required>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" class="m-t-10" fxLayoutGap="10px" fxLayoutAlign="end center">
+      <button mat-button [mat-dialog-close]="true">Cancelar</button>
+      <button mat-raised-button color="primary" [disabled]="!f.valid" type="submit">Submit</button>
+    </div>
+  </form>
+</mat-dialog-content>
+<!--<mat-dialog-actions fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="end center">-->
+    <!--&lt;!&ndash;<button mat-button [mat-dialog-close]="true">Cancelar</button>&ndash;&gt;-->
+    <!--&lt;!&ndash;<button mat-raised-button color="primary" [disabled]="!f.valid" type="submit">Submit</button>&ndash;&gt;-->
+<!--</mat-dialog-actions>-->
