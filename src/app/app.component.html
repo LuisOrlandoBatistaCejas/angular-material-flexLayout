@@ -4,24 +4,56 @@
     Welcome to {{title}}!
   </h1>
 </div>
+<!--<i class="material-icons">face</i>-->
 <!--<div fxLayout="row" fxLayoutAlign="center center">-->
-<mat-list>
-  <mat-divider></mat-divider>
-  <h3 matSubheader>Messages</h3>
-  <mat-list-item *ngFor="let message of messages">
-    <h3 matLine> {{message.from}} </h3>
-    <p matLine class="demo-2"> {{message.content}} </p>
-    <div fxLayout="row" fxLayoutGap="20px">
-      <button mat-raised-button color="primary">Editar</button>
-      <button mat-raised-button color="warn">Eliminar</button>
-    </div>
-    <!--<p matLine class="demo-2"> {{message.content}} </p>-->
-  </mat-list-item>
-  <mat-divider></mat-divider>
-</mat-list>
-<div fxLayout="row" fxLayoutAlign="end center" style="margin-top: 30px;">
-  <button mat-raised-button color="primary">Adicionar</button>
+<div class="m-l-r-30">
+  <mat-nav-list>
+    <mat-divider></mat-divider>
+    <h3 matSubheader>Messages</h3>
+    <a (click)="openDialogMessageCreate(message)" mat-list-item *ngFor="let message of messages">
+      <mat-icon matListIcon>folder</mat-icon>
+      <h3 matLine> {{message.from}} </h3>
+      <p matLine class="demo-2"> {{message.content}} </p>
+      <div fxLayout="row" fxLayoutGap="20px">
+        <button mat-icon-button>
+          <mat-icon (click)="openDialogMessageCreate()">edit</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon (click)="openDialogMessageCreate()">delete</mat-icon>
+        </button>
+      </div>
+    </a>
+    <mat-divider></mat-divider>
+  </mat-nav-list>
+
+  <!--<mat-list>-->
+    <!--<mat-divider></mat-divider>-->
+    <!--<h3 matSubheader>Messages</h3>-->
+    <!--<mat-list-item (click)="null" *ngFor="let message of messages">-->
+      <!--<mat-icon matListIcon>folder</mat-icon>-->
+      <!--<h3 matLine> {{message.from}} </h3>-->
+      <!--<p matLine class="demo-2"> {{message.content}} </p>-->
+      <!--<div fxLayout="row" fxLayoutGap="20px">-->
+        <!--<button mat-icon-button>-->
+          <!--<mat-icon aria-label="Example icon-button with a heart icon">edit</mat-icon>-->
+        <!--</button>-->
+        <!--<button mat-icon-button>-->
+          <!--<mat-icon aria-label="Example icon-button with a heart icon">delete</mat-icon>-->
+        <!--</button>-->
+        <!--&lt;!&ndash;<button mat-raised-button color="primary">Editar</button>&ndash;&gt;-->
+        <!--&lt;!&ndash;<button mat-raised-button color="warn">Eliminar</button>&ndash;&gt;-->
+      <!--</div>-->
+    <!--</mat-list-item>-->
+    <!--<mat-divider></mat-divider>-->
+  <!--</mat-list>-->
+  <div fxLayout="row" fxLayoutAlign="end center" class="m-t-30 m-r-20">
+    <!--<button mat-icon-button (click)="openDialogMessageCreate()">-->
+      <!--<mat-icon aria-label="Example icon-button with a heart icon">playlist_add</mat-icon>-->
+    <!--</button>-->
+    <button (click)="openDialogMessageCreate()" mat-raised-button color="primary">Adicionar</button>
+  </div>
 </div>
+
 
   <!--<mat-list>-->
     <!--<mat-list-item *ngFor="let message of messages">-->
