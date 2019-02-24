@@ -3,15 +3,24 @@
   <form (ngSubmit)="onSubmit()" #f="ngForm" class="example-form">
     <div fxLayout="column">
       <mat-form-field class="example-full-width">
-        <input matInput [ngModel]="item.from" name="from" id="from" placeholder="From" required>
+        <input matInput [ngModel]="item.from" #from="ngModel" name="from" id="from" placeholder="From" required>
+        <mat-error *ngIf="!from.valid && from.touched">
+          The from field is required
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <input matInput [ngModel]="item.subject" name="subject" id="subject" placeholder="Subject" required>
+        <input matInput [ngModel]="item.subject" #subjet="ngModel" name="subject" id="subject" placeholder="Subject" required>
+        <mat-error *ngIf="!subjet.valid && subjet.touched">
+          The subjet field is required
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <input matInput [ngModel]="item.content" name="content" id="content" placeholder="Content" required>
+        <input matInput [ngModel]="item.content" #content="ngModel" name="content" id="content" placeholder="Content" required>
+        <mat-error *ngIf="!content.valid && content.touched">
+          The content field is required
+        </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout="row" class="m-t-10" fxLayoutGap="10px" fxLayoutAlign="end center">
