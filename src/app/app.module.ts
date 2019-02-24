@@ -9,14 +9,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule, MatListModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule, MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from '@angular/material';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { DialogMessageEditComponent } from './dialogMessageEdit/dialogMessageEdit';
-import { DialogMessageCreateComponent } from './dialogMessageCreate/dialogMessageCreate';
+
+import { AppMessageComponent } from './component/message.component/message.component';
+import { AppComprobanteDetailComponent } from './component/comprobante-details.component/comprobante-detail.component';
+
+import { DialogMessageEditComponent } from './dialog/dialogMessageEdit/dialogMessageEdit';
+import { DialogMessageCreateComponent } from './dialog/dialogMessageCreate/dialogMessageCreate';
+import { DialogComprobanteDetailCreateComponent } from './dialog/dialogComprobanteDetailCreate/dialogComprobanteDetailCreate';
+import { DialogComprobanteDetailEditComponent } from './dialog/dialogComprobanteDetailEdit/dialogComprobanteDetailEdit';
+
+import {ComprobanteService} from './services/comprobante.service';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AppMessageComponent,
+    AppComprobanteDetailComponent,
     DialogMessageEditComponent,
-    DialogMessageCreateComponent
+    DialogMessageCreateComponent,
+    DialogComprobanteDetailCreateComponent,
+    DialogComprobanteDetailEditComponent
   ],
   imports: [
     BrowserModule,
@@ -36,9 +48,12 @@ import { DialogMessageCreateComponent } from './dialogMessageCreate/dialogMessag
   ],
   entryComponents: [
     DialogMessageEditComponent,
-    DialogMessageCreateComponent
+    DialogMessageCreateComponent,
+    DialogComprobanteDetailCreateComponent,
+    DialogComprobanteDetailEditComponent
   ],
   providers: [
+    ComprobanteService,
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}
   ],
   bootstrap: [AppComponent]

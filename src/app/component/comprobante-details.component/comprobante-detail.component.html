@@ -1,0 +1,22 @@
+<mat-nav-list>
+  <mat-divider></mat-divider>
+  <h3 matSubheader>Messages</h3>
+  <a mat-list-item *ngFor="let message of messages">
+    <mat-icon matListIcon>folder</mat-icon>
+    <h3 matLine> {{message.from}} </h3>
+    <p matLine class="demo-2"> {{message.content}} </p>
+    <div fxLayout="row" fxLayoutGap="20px">
+      <button mat-icon-button>
+        <mat-icon (click)="openDialogMessageEdit(message)">edit</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon (click)="deleteMessage(message)">delete</mat-icon>
+      </button>
+    </div>
+  </a>
+  <mat-divider></mat-divider>
+</mat-nav-list>
+
+<div fxLayout="row" fxLayoutAlign="end center" class="m-t-30 m-r-20">
+  <button (click)="openDialogMessageCreate()" mat-raised-button color="primary">Adicionar</button>
+</div>

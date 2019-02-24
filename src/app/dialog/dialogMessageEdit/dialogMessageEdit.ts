@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { NgForm } from '@angular/forms';
-import { MessageModel } from '../model/message.model';
+import { MessageModel } from '../../model/message.model';
 
 @Component({
   selector: 'app-dialog-message-edit',
