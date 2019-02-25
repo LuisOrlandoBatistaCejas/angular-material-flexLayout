@@ -18,7 +18,8 @@ import { DialogMessageCreateComponent } from './dialog/dialogMessageCreate/dialo
 import { DialogComprobanteDetailCreateComponent } from './dialog/dialogComprobanteDetailCreate/dialogComprobanteDetailCreate';
 import { DialogComprobanteDetailEditComponent } from './dialog/dialogComprobanteDetailEdit/dialogComprobanteDetailEdit';
 
-import {ComprobanteService} from './services/comprobante.service';
+import { ComprobanteService } from './services/comprobante.service';
+import { ComprobanteDetailService } from './services/comprobante-detail.service';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import {ComprobanteService} from './services/comprobante.service';
   ],
   providers: [
     ComprobanteService,
+    ComprobanteDetailService,
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}
   ],
   bootstrap: [AppComponent]

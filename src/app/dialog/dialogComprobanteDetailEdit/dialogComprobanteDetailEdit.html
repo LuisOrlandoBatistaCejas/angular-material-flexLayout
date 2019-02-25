@@ -1,1 +1,62 @@
+<h2 mat-dialog-title>Editar detalles del comprobante</h2>
+<mat-dialog-content>
+  <form (ngSubmit)="onSubmit()" #f="ngForm" class="example-form">
+    <div fxLayout="column">
+      <mat-form-field class="example-full-width">
+        <input matInput [ngModel]="item.codigo_principal" #codigo_principal="ngModel" name="codigo_principal" id="codigo_principal" placeholder="Codigo_principal" required>
+        <mat-error *ngIf="!codigo_principal.valid && codigo_principal.touched">
+          The from field is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput [ngModel]="item.descripcion" #descripcion="ngModel" name="descripcion" id="descripcion" placeholder="Descripcion" required>
+        <mat-error *ngIf="!descripcion.valid && descripcion.touched">
+          The subjet field is required
+        </mat-error>
+      </mat-form-field>
+
+      <!--<div fxLayout="column">-->
+      <div fxLayout="row" fxLayoutGap="10px">
+        <mat-form-field fxFlex="50" class="example-full-width">
+          <input matInput [ngModel]="item.cantidad" #cantidad="ngModel" name="cantidad" id="cantidad" placeholder="Cantidad" required>
+          <mat-error *ngIf="!cantidad.valid && cantidad.touched">
+            The content field is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="50" class="example-full-width">
+          <input matInput [ngModel]="item.precio" #precio="ngModel" name="precio" id="precio" placeholder="Precio" required>
+          <mat-error *ngIf="!precio.valid && precio.touched">
+            The content field is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutGap="10px">
+        <mat-form-field fxFlex="50" class="example-full-width">
+          <input matInput [ngModel]="item.descuento" #descuento="ngModel" name="descuento" id="descuento" placeholder="Descuento" required>
+          <mat-error *ngIf="!descuento.valid && descuento.touched">
+            The content field is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="50" class="example-full-width">
+          <input matInput [ngModel]="item.total" #total="ngModel" name="total" id="total" placeholder="Total" required>
+          <mat-error *ngIf="!total.valid && total.touched">
+            The content field is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row" class="m-t-10" fxLayoutGap="10px" fxLayoutAlign="end center">
+      <button mat-button [mat-dialog-close]="true">Cancelar</button>
+      <button mat-raised-button color="primary" [disabled]="!f.valid" type="submit">Submit</button>
+    </div>
+  </form>
+</mat-dialog-content>
+<!--<mat-dialog-actions fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="end center">-->
+<!--&lt;!&ndash;<button mat-button [mat-dialog-close]="true">Cancelar</button>&ndash;&gt;-->
+<!--&lt;!&ndash;<button mat-raised-button color="primary" [disabled]="!f.valid" type="submit">Submit</button>&ndash;&gt;-->
+<!--</mat-dialog-actions>-->
 
