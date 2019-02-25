@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
-import { MessageModel } from '../../model/message.model';
+import { ComprobanteModel } from '../../model/comprobante.model';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -10,7 +10,7 @@ import { NgForm } from '@angular/forms';
 })
 export class DialogMessageCreateComponent {
   @ViewChild('f') form: NgForm;
-  message: MessageModel;
+  message: ComprobanteModel;
   constructor(
     private dialogRef: MatDialogRef<DialogMessageCreateComponent>
   ) {}

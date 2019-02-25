@@ -10,10 +10,10 @@ import { MatCardModule, MatListModule, MatIconModule, MatToolbarModule, MatButto
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { AppMessageComponent } from './component/message.component/message.component';
+import { AppMessageComponent } from './component/comprobante.component/comprobante.component';
 import { AppComprobanteDetailComponent } from './component/comprobante-details.component/comprobante-detail.component';
 
-import { DialogMessageEditComponent } from './dialog/dialogMessageEdit/dialogMessageEdit';
+import { DialogComprobanteEditComponent } from './dialog/dialogComprobanteEdit/dialogComprobanteEdit';
 import { DialogMessageCreateComponent } from './dialog/dialogMessageCreate/dialogMessageCreate';
 import { DialogComprobanteDetailCreateComponent } from './dialog/dialogComprobanteDetailCreate/dialogComprobanteDetailCreate';
 import { DialogComprobanteDetailEditComponent } from './dialog/dialogComprobanteDetailEdit/dialogComprobanteDetailEdit';
@@ -26,7 +26,7 @@ import { ComprobanteDetailService } from './services/comprobante-detail.service'
     AppComponent,
     AppMessageComponent,
     AppComprobanteDetailComponent,
-    DialogMessageEditComponent,
+    DialogComprobanteEditComponent,
     DialogMessageCreateComponent,
     DialogComprobanteDetailCreateComponent,
     DialogComprobanteDetailEditComponent
@@ -48,7 +48,7 @@ import { ComprobanteDetailService } from './services/comprobante-detail.service'
     // MatDialogRef
   ],
   entryComponents: [
-    DialogMessageEditComponent,
+    DialogComprobanteEditComponent,
     DialogMessageCreateComponent,
     DialogComprobanteDetailCreateComponent,
     DialogComprobanteDetailEditComponent
