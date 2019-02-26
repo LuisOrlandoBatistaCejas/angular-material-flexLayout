@@ -5,14 +5,14 @@ import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-dialog-message-create',
-  templateUrl: './dialogMessageCreate.html',
-  styleUrls: ['./dialogMessageCreate.css']
+  templateUrl: './dialogComprobanteCreate.html',
+  styleUrls: ['./dialogComprobanteCreate.css']
 })
-export class DialogMessageCreateComponent {
+export class DialogComprobanteCreateComponent {
   @ViewChild('f') form: NgForm;
   message: ComprobanteModel;
   constructor(
-    private dialogRef: MatDialogRef<DialogMessageCreateComponent>
+    private dialogRef: MatDialogRef<DialogComprobanteCreateComponent>
   ) {}
   onSubmit() {
     this.message = this.form.value;

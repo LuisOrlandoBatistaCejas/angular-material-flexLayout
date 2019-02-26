@@ -14,7 +14,7 @@ import { AppMessageComponent } from './component/comprobante.component/comproban
 import { AppComprobanteDetailComponent } from './component/comprobante-details.component/comprobante-detail.component';
 
 import { DialogComprobanteEditComponent } from './dialog/dialogComprobanteEdit/dialogComprobanteEdit';
-import { DialogMessageCreateComponent } from './dialog/dialogMessageCreate/dialogMessageCreate';
+import { DialogComprobanteCreateComponent } from './dialog/dialogComprobanteCreate/dialogComprobanteCreate';
 import { DialogComprobanteDetailCreateComponent } from './dialog/dialogComprobanteDetailCreate/dialogComprobanteDetailCreate';
 import { DialogComprobanteDetailEditComponent } from './dialog/dialogComprobanteDetailEdit/dialogComprobanteDetailEdit';
 import { HttpClientModule } from '@angular/common/http';
@@ -28,7 +28,7 @@ import { ComprobanteDetailService } from './services/comprobante-detail.service'
     AppMessageComponent,
     AppComprobanteDetailComponent,
     DialogComprobanteEditComponent,
-    DialogMessageCreateComponent,
+    DialogComprobanteCreateComponent,
     DialogComprobanteDetailCreateComponent,
     DialogComprobanteDetailEditComponent
   ],
@@ -51,7 +51,7 @@ import { ComprobanteDetailService } from './services/comprobante-detail.service'
   ],
   entryComponents: [
     DialogComprobanteEditComponent,
-    DialogMessageCreateComponent,
+    DialogComprobanteCreateComponent,
     DialogComprobanteDetailCreateComponent,
     DialogComprobanteDetailEditComponent
   ],

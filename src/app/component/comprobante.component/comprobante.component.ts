@@ -3,7 +3,7 @@ import { MatDialog, MatDialogRef } from '@angular/material';
 import { ComprobanteModel } from '../../model/comprobante.model';
 import { filter } from 'rxjs/operators';
 import { DialogComprobanteEditComponent } from '../../dialog/dialogComprobanteEdit/dialogComprobanteEdit';
-import { DialogMessageCreateComponent } from '../../dialog/dialogMessageCreate/dialogMessageCreate';
+import { DialogComprobanteCreateComponent } from '../../dialog/dialogComprobanteCreate/dialogComprobanteCreate';
 import { ComprobanteService } from '../../services/comprobante.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class AppMessageComponent implements OnInit {
   list: any;
   comprobanteList: ComprobanteModel[] = [];
   dialogComprobanteEdit: MatDialogRef<DialogComprobanteEditComponent>;
-  dialogComprobanteCreate: MatDialogRef<DialogMessageCreateComponent>;
+  dialogComprobanteCreate: MatDialogRef<DialogComprobanteCreateComponent>;
   constructor(public dialog: MatDialog, private comprobanteService: ComprobanteService) {
     this.comprobanteList.push(new ComprobanteModel('1', '1', '1792231612001', '2019-01-29', 'LUIS ORLANDO', '2996500', '', '17.54000', '0.00000', '1.47000', '19.01000', '0'));
     this.comprobanteList.push(new ComprobanteModel('1790016919001', '006111000362159', '1792231612001', '2019-01-29', 'HOMERO SALAS S/N Y AV. DE LA PRENSA', '2996500', '', '17.54000', '0.00000', '1.47000', '19.01000', '0'));
@@ -53,7 +53,7 @@ export class AppMessageComponent implements OnInit {
     this.comprobanteService.selectedToDelete.emit(comprobante);
   }
   openDialogCreate() {
-    this.dialogComprobanteCreate = this.dialog.open(DialogMessageCreateComponent, {
+    this.dialogComprobanteCreate = this.dialog.open(DialogComprobanteCreateComponent, {
       height: '500px',
       width: '600px'
     });
