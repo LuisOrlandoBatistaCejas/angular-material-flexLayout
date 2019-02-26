@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material';
-import { MessageModel } from '../../model/message.model';
 import { DialogComprobanteDetailEditComponent } from '../../dialog/dialogComprobanteDetailEdit/dialogComprobanteDetailEdit';
 import { DialogComprobanteDetailCreateComponent } from '../../dialog/dialogComprobanteDetailCreate/dialogComprobanteDetailCreate';
 import { filter } from 'rxjs/operators';
 import { ComprobanteDetailService } from '../../services/comprobante-detail.service';
+import { ComprobanteService } from '../../services/comprobante.service';
 import { ComprobanteDetailModel } from '../../model/comprobante-detail.model';
 
 @Component({
@@ -17,7 +17,7 @@ export class AppComprobanteDetailComponent implements OnInit {
   comprobanteDetailList: ComprobanteDetailModel[] = [];
   dialogComprobanteDetailEdit: MatDialogRef<DialogComprobanteDetailEditComponent>;
   dialogComprobanteDetailCreate: MatDialogRef<DialogComprobanteDetailCreateComponent>;
-  constructor(public dialog: MatDialog, public comprobanteDetailService: ComprobanteDetailService) {
+  constructor(private comprobanteService: ComprobanteService, public dialog: MatDialog, public comprobanteDetailService: ComprobanteDetailService) {
     // this.messages = [
     //   {id: 1, from: 'Destino 1', subject: 'subjet1', content: 'Este es el contenido q debe ser mas largo'},
     //   {id: 2, from: 'Destino 2', subject: 'subjet2', content: 'Este es el contenido q debe ser mas largo'},
@@ -27,6 +27,15 @@ export class AppComprobanteDetailComponent implements OnInit {
   }
   ngOnInit() {
     this.comprobanteDetailList = this.comprobanteDetailService.getComprobantes();
+    this.comprobanteService.selectedToDelete.subscribe(
+      (objectToDeleted) => {
+        this.deleteEmitter(objectToDeleted);
+      }
+    );
+  }
+  deleteEmitter(object) {
+    const index = this.comprobanteDetailList.findIndex(item => item.comprobante_Ruc === object.Ruc && item.comprobante_Numero === object.Numero);
+    this.comprobanteDetailList.splice(index, 1);
   }
   openDialogEdit(item) {
     this.dialogComprobanteDetailEdit = this.dialog.open(DialogComprobanteDetailEditComponent, {
@@ -46,7 +55,9 @@ export class AppComprobanteDetailComponent implements OnInit {
   }
   delete(object) {
     const index = this.comprobanteDetailList.findIndex(item => item.id === object.id);
-    this.comprobanteDetailList.splice(index, 1);
+    if (index !== -1) {
+      this.comprobanteDetailList.splice(index, 1);
+    }
   }
   asigId() {
     let idMax = 0;

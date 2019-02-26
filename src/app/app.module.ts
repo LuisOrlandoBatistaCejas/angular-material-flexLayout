@@ -17,6 +17,7 @@ import { DialogComprobanteEditComponent } from './dialog/dialogComprobanteEdit/d
 import { DialogMessageCreateComponent } from './dialog/dialogMessageCreate/dialogMessageCreate';
 import { DialogComprobanteDetailCreateComponent } from './dialog/dialogComprobanteDetailCreate/dialogComprobanteDetailCreate';
 import { DialogComprobanteDetailEditComponent } from './dialog/dialogComprobanteDetailEdit/dialogComprobanteDetailEdit';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ComprobanteService } from './services/comprobante.service';
 import { ComprobanteDetailService } from './services/comprobante-detail.service';
@@ -44,7 +45,8 @@ import { ComprobanteDetailService } from './services/comprobante-detail.service'
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
     // MatDialogRef
   ],
   entryComponents: [

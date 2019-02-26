@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
-import { MessageModel } from '../../model/message.model';
+import { ComprobanteDetailModel } from '../../model/comprobante-detail.model';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -10,12 +10,12 @@ import { NgForm } from '@angular/forms';
 })
 export class DialogComprobanteDetailCreateComponent {
   @ViewChild('f') form: NgForm;
-  message: MessageModel;
+  comprobanteDetail: ComprobanteDetailModel;
   constructor(
     private dialogRef: MatDialogRef<DialogComprobanteDetailCreateComponent>
   ) {}
   onSubmit() {
-    this.message = this.form.value;
-    this.dialogRef.close(this.message);
+    this.comprobanteDetail = this.form.value;
+    this.dialogRef.close(this.comprobanteDetail);
   }
 }

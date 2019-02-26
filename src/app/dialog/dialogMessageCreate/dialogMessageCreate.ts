@@ -18,4 +18,7 @@ export class DialogMessageCreateComponent {
     this.message = this.form.value;
     this.dialogRef.close(this.message);
   }
+  close() {
+    this.dialogRef.close();
+  }
 }

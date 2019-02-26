@@ -3,29 +3,77 @@
   <form (ngSubmit)="onSubmit()" #f="ngForm" class="example-form">
     <div fxLayout="column">
       <mat-form-field class="example-full-width">
-        <input matInput ngModel #from="ngModel" name="from" id="from" placeholder="From" required>
-        <!--<mat-hint>Errors appear instantly!</mat-hint>-->
-        <mat-error *ngIf="!from.valid && from.touched">
+        <input matInput ngModel #identificacion="ngModel" name="identificacion" id="identificacion" placeholder="Identificacion" required>
+        <mat-error *ngIf="!identificacion.valid && identificacion.touched">
           The from field is required
         </mat-error>
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <input matInput ngModel #subjet="ngModel" name="subject" id="subject" placeholder="Subject" required>
-        <mat-error *ngIf="!subjet.valid && subjet.touched">
-          The subjet field is required
-        </mat-error>
-      </mat-form-field>
-
-      <mat-form-field class="example-full-width">
-        <input matInput ngModel #content="ngModel" name="content" id="content" placeholder="Content" required>
-        <mat-error *ngIf="!content.valid && content.touched">
+        <input matInput ngModel #direccion="ngModel" name="direccion" id="direccion" placeholder="Direccion" required>
+        <mat-error *ngIf="!direccion.valid && direccion.touched">
           The content field is required
         </mat-error>
       </mat-form-field>
+
+      <div fxLayout="row" fxLayoutGap="10px">
+        <mat-form-field fxFlex="50" class="example-full-width">
+          <input matInput ngModel #telefono="ngModel" name="telefono" id="telefono" placeholder="Telefono">
+        </mat-form-field>
+
+        <mat-form-field fxFlex="50" class="example-full-width">
+          <input matInput ngModel #fecha="ngModel" name="fecha" id="fecha" placeholder="Fecha" required>
+          <mat-error *ngIf="!fecha.valid && fecha.touched">
+            The subjet field is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutGap="10px">
+        <mat-form-field fxFlex="33.3" class="example-full-width">
+          <input matInput ngModel #email="ngModel" name="email" id="email" placeholder="Correo">
+        </mat-form-field>
+
+        <mat-form-field fxFlex="33.3" class="example-full-width">
+          <input matInput ngModel #subtotal="ngModel" name="subtotal" id="subtotal" placeholder="Subtotal" required>
+          <mat-error *ngIf="!subtotal.valid && subtotal.touched">
+            The content field is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="33.3" class="example-full-width">
+          <input matInput ngModel #descuento="ngModel" name="descuento" id="descuento" placeholder="Descuento" required>
+          <mat-error *ngIf="!descuento.valid && descuento.touched">
+            The content field is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutGap="10px">
+        <mat-form-field fxFlex="33.3" class="example-full-width">
+          <input matInput ngModel #iva="ngModel" name="iva" id="iva" placeholder="Iva" required>
+          <mat-error *ngIf="!iva.valid && iva.touched">
+            The content field is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="33.3" class="example-full-width">
+          <input matInput ngModel #total="ngModel" name="total" id="total" placeholder="Total" required>
+          <mat-error *ngIf="!total.valid && total.touched">
+            The content field is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="33.3" class="example-full-width">
+          <input matInput ngModel #anulada="ngModel" name="anulada" id="anulada" placeholder="Anulada" required>
+          <mat-error *ngIf="!anulada.valid && anulada.touched">
+            The content field is required
+          </mat-error>
+        </mat-form-field>
+      </div>
     </div>
     <div fxLayout="row" class="m-t-10" fxLayoutGap="10px" fxLayoutAlign="end center">
-      <button mat-button [mat-dialog-close]="true">Cancelar</button>
+      <button mat-button [mat-dialog-close]>Cancelar</button>
       <button mat-raised-button color="primary" [disabled]="!f.valid" type="submit">Submit</button>
     </div>
   </form>
