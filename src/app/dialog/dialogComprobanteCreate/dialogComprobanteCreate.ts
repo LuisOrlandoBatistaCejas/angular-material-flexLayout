@@ -10,13 +10,13 @@ import { NgForm } from '@angular/forms';
 })
 export class DialogComprobanteCreateComponent {
   @ViewChild('f') form: NgForm;
-  message: ComprobanteModel;
+  comprobante: ComprobanteModel;
   constructor(
     private dialogRef: MatDialogRef<DialogComprobanteCreateComponent>
   ) {}
   onSubmit() {
-    this.message = this.form.value;
-    this.dialogRef.close(this.message);
+    this.comprobante = this.form.value;
+    this.dialogRef.close(this.comprobante);
   }
   close() {
     this.dialogRef.close();

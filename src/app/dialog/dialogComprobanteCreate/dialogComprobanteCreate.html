@@ -2,19 +2,37 @@
 <mat-dialog-content>
   <form (ngSubmit)="onSubmit()" #f="ngForm" class="example-form">
     <div fxLayout="column">
-      <mat-form-field class="example-full-width">
-        <input matInput ngModel #identificacion="ngModel" name="identificacion" id="identificacion" placeholder="Identificacion" required>
-        <mat-error *ngIf="!identificacion.valid && identificacion.touched">
-          The from field is required
-        </mat-error>
-      </mat-form-field>
+      <div fxLayout="row" fxLayoutGap="10px">
+        <mat-form-field fxFlex="50" class="example-full-width">
+          <input matInput ngModel #identificacion="ngModel" name="identificacion" id="identificacion" placeholder="Identificacion" required>
+          <mat-error *ngIf="!identificacion.valid && identificacion.touched">
+            The from field is required
+          </mat-error>
+        </mat-form-field>
 
-      <mat-form-field class="example-full-width">
-        <input matInput ngModel #direccion="ngModel" name="direccion" id="direccion" placeholder="Direccion" required>
-        <mat-error *ngIf="!direccion.valid && direccion.touched">
-          The content field is required
-        </mat-error>
-      </mat-form-field>
+        <mat-form-field fxFlex="50" class="example-full-width">
+          <input matInput ngModel #direccion="ngModel" name="direccion" id="direccion" placeholder="Direccion" required>
+          <mat-error *ngIf="!direccion.valid && direccion.touched">
+            The content field is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutGap="10px">
+        <mat-form-field fxFlex="50" class="example-full-width">
+          <input matInput ngModel #ruc="ngModel" name="ruc" id="ruc" placeholder="Ruc" required>
+          <mat-error *ngIf="!ruc.valid && ruc.touched">
+            The from field is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="50" class="example-full-width">
+          <input matInput ngModel #numero="ngModel" name="numero" id="numero" placeholder="Numero" required>
+          <mat-error *ngIf="!numero.valid && numero.touched">
+            The content field is required
+          </mat-error>
+        </mat-form-field>
+      </div>
 
       <div fxLayout="row" fxLayoutGap="10px">
         <mat-form-field fxFlex="50" class="example-full-width">
