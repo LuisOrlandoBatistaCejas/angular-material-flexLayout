@@ -20,19 +20,25 @@
 
       <div fxLayout="row" fxLayoutGap="10px">
         <mat-form-field fxFlex="50" class="example-full-width">
-          <mat-select placeholder="Ruc" ngModel #ruc="ngModel" name="ruc" id="ruc">
+          <mat-select placeholder="Ruc" ngModel #ruc="ngModel" name="ruc" id="ruc" required>
             <mat-option *ngFor="let item of comprobanteList" [value]="item.ruc">
               {{item.ruc}}
             </mat-option>
           </mat-select>
+          <mat-error *ngIf="!ruc.valid && ruc.touched">
+            The content field is required
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field fxFlex="50" class="example-full-width">
-          <mat-select placeholder="Numero" ngModel #numero="ngModel" name="numero" id="numero">
+          <mat-select placeholder="Numero" ngModel #numero="ngModel" name="numero" id="numero" required>
             <mat-option *ngFor="let item of comprobanteList" [value]="item.numero">
               {{item.numero}}
             </mat-option>
           </mat-select>
+          <mat-error *ngIf="!numero.valid && numero.touched">
+            The content field is required
+          </mat-error>
         </mat-form-field>
       </div>
 
