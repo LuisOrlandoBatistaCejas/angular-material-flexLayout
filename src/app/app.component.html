@@ -1,12 +1,17 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-</div>
-<div fxLayout="row" fxLayoutAlign="center center">
-  <button fxFlexAlign="center" mat-raised-button color="primary">Primary</button>
-  <button fxFlexAlign="center" mat-raised-button color="primary">Primary</button>
+<div fxLayout="column">
+  <div fxFlex="100" fxLayoutAlign="center center">
+    <h1>
+      Welcome to Angular, Material, FlexLayout and DesignIcons!
+    </h1>
+  </div>
+  <div fxLayout="row" fxLayoutGap="40px">
+    <div fxFlex="50" class="m-l-30">
+      <app-message></app-message>
+    </div>
+    <div fxFlex="50" class="m-r-30">
+      <app-comprobante-detail></app-comprobante-detail>
+    </div>
+  </div>
 </div>
 
 <router-outlet></router-outlet>

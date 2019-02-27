@@ -1,0 +1,22 @@
+<mat-nav-list>
+  <mat-divider></mat-divider>
+  <h3 matSubheader>Detalles del Comprobante</h3>
+  <a mat-list-item *ngFor="let item of comprobanteDetailList">
+    <mat-icon matListIcon>details</mat-icon>
+    <h3 matLine> {{item.codigo_principal}} </h3>
+    <p matLine class="demo-2"> {{item.descripcion}} </p>
+    <div fxLayout="row" fxLayoutGap="20px">
+      <button mat-icon-button>
+        <mat-icon (click)="openDialogEdit(item)">edit</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon (click)="delete(item)">delete</mat-icon>
+      </button>
+    </div>
+  </a>
+  <mat-divider></mat-divider>
+</mat-nav-list>
+
+<div fxLayout="row" fxLayoutAlign="end center" class="m-t-30 m-r-20">
+  <button (click)="openDialogCreate()" mat-raised-button color="primary">Adicionar</button>
+</div>
