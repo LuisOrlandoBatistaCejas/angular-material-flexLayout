@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCardModule, MatListModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule, MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from '@angular/material';
+import { MatCardModule, MatListModule, MatSelectModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule, MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from '@angular/material';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -38,6 +38,7 @@ import { ComprobanteDetailService } from './services/comprobante-detail.service'
     FlexLayoutModule,
     BrowserAnimationsModule,
     MatCardModule,
+    MatSelectModule,
     MatListModule,
     MatIconModule,
     MatToolbarModule,

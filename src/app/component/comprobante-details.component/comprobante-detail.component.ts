@@ -27,9 +27,9 @@ export class AppComprobanteDetailComponent implements OnInit {
     );
   }
   deleteEmitter(object) {
-    const objectList = this.comprobanteDetailList.filter(item => item.comprobante_Ruc === object.ruc && item.comprobante_Numero === object.numero);
+    const objectList = this.comprobanteDetailList.filter(item => item.ruc === object.ruc && item.numero === object.numero);
     for (const elem of objectList) {
-      const index = this.comprobanteDetailList.findIndex(item => item.comprobante_Ruc === elem.comprobante_Ruc && item.comprobante_Numero === elem.comprobante_Numero);
+      const index = this.comprobanteDetailList.findIndex(item => item.ruc === elem.ruc && item.numero === elem.numero);
       this.comprobanteDetailList.splice(index, 1);
     }
   }

@@ -2,19 +2,37 @@
 <mat-dialog-content>
   <form (ngSubmit)="onSubmit()" #f="ngForm" class="example-form">
     <div fxLayout="column">
-      <mat-form-field class="example-full-width">
-        <input matInput [ngModel]="item.codigo_principal" #codigo_principal="ngModel" name="codigo_principal" id="codigo_principal" placeholder="Codigo_principal" required>
-        <mat-error *ngIf="!codigo_principal.valid && codigo_principal.touched">
-          The from field is required
-        </mat-error>
-      </mat-form-field>
+      <div fxLayout="row" fxLayoutGap="10px">
+        <mat-form-field fxFlex="50" class="example-full-width">
+          <input matInput [ngModel]="item.codigo_principal" #codigo_principal="ngModel" name="codigo_principal" id="codigo_principal" placeholder="Codigo_principal" required>
+          <mat-error *ngIf="!codigo_principal.valid && codigo_principal.touched">
+            The from field is required
+          </mat-error>
+        </mat-form-field>
 
-      <mat-form-field class="example-full-width">
-        <input matInput [ngModel]="item.descripcion" #descripcion="ngModel" name="descripcion" id="descripcion" placeholder="Descripcion" required>
-        <mat-error *ngIf="!descripcion.valid && descripcion.touched">
+        <mat-form-field fxFlex="50" class="example-full-width">
+          <input matInput [ngModel]="item.descripcion" #descripcion="ngModel" name="descripcion" id="descripcion" placeholder="Descripcion" required>
+          <mat-error *ngIf="!descripcion.valid && descripcion.touched">
+            The subjet field is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutGap="10px">
+        <mat-form-field fxFlex="50" class="example-full-width">
+          <input matInput [ngModel]="item.ruc" #ruc="ngModel" name="ruc" id="ruc" placeholder="Ruc" required>
+          <mat-error *ngIf="!ruc.valid && ruc.touched">
+          The from field is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="50" class="example-full-width">
+          <input matInput [ngModel]="item.numero" #numero="ngModel" name="numero" id="numero" placeholder="Numero" required>
+          <mat-error *ngIf="!numero.valid && numero.touched">
           The subjet field is required
-        </mat-error>
-      </mat-form-field>
+          </mat-error>
+        </mat-form-field>
+      </div>
 
       <div fxLayout="row" fxLayoutGap="10px">
         <mat-form-field fxFlex="50" class="example-full-width">

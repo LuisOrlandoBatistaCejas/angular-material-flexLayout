@@ -20,17 +20,19 @@
 
       <div fxLayout="row" fxLayoutGap="10px">
         <mat-form-field fxFlex="50" class="example-full-width">
-          <input matInput ngModel #comprobante_Ruc="ngModel" name="comprobante_Ruc" id="comprobante_Ruc" placeholder="Ruc" required>
-          <mat-error *ngIf="!comprobante_Ruc.valid && comprobante_Ruc.touched">
-            The from field is required
-          </mat-error>
+          <mat-select placeholder="Ruc" ngModel #ruc="ngModel" name="ruc" id="ruc">
+            <mat-option *ngFor="let item of comprobanteList" [value]="item.ruc">
+              {{item.ruc}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
 
         <mat-form-field fxFlex="50" class="example-full-width">
-          <input matInput ngModel #comprobante_Numero="ngModel" name="comprobante_Numero" id="comprobante_Numero" placeholder="Numero" required>
-          <mat-error *ngIf="!comprobante_Numero.valid && comprobante_Numero.touched">
-            The subjet field is required
-          </mat-error>
+          <mat-select placeholder="Numero" ngModel #numero="ngModel" name="numero" id="numero">
+            <mat-option *ngFor="let item of comprobanteList" [value]="item.numero">
+              {{item.numero}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
 
