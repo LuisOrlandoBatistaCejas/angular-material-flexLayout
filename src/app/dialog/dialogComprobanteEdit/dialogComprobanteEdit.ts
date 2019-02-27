@@ -22,8 +22,8 @@ export class DialogComprobanteEditComponent implements OnInit {
   }
   onSubmit() {
     this.comprobante = this.form.value;
-    this.comprobante.Ruc = this.item.Ruc;
-    this.comprobante.Numero = this.item.Numero;
+    this.comprobante.ruc = this.item.ruc;
+    this.comprobante.numero = this.item.numero;
     this.dialogRef.close(this.comprobante);
   }
 }

@@ -1,6 +1,8 @@
 import { Injectable, EventEmitter, OnInit } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+import { ComprobanteModel } from '../model/comprobante.model';
 
 @Injectable()
 export class ComprobanteService implements OnInit {
@@ -16,15 +18,10 @@ export class ComprobanteService implements OnInit {
     );
   }
   getAll() {
-    return this.http.get(this.urlComprobante).subscribe(
-      (object) => console.log(object)
-    );
-  }
-
-  getComprobante() {
-    // return this.http.get('http://api/comprobantes');
-  }
-  insertComprobante(comprobante) {
-    // return this.http.post(this.urlComprobante, comprobante).subscribe();
+    return this.http.get(this.urlComprobante);
+    //   .pipe()
+    //   .subscribe(result => {
+    //   console.log(result);
+    // });
   }
 }

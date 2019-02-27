@@ -17,14 +17,7 @@ export class AppComprobanteDetailComponent implements OnInit {
   comprobanteDetailList: ComprobanteDetailModel[] = [];
   dialogComprobanteDetailEdit: MatDialogRef<DialogComprobanteDetailEditComponent>;
   dialogComprobanteDetailCreate: MatDialogRef<DialogComprobanteDetailCreateComponent>;
-  constructor(private comprobanteService: ComprobanteService, public dialog: MatDialog, public comprobanteDetailService: ComprobanteDetailService) {
-    // this.messages = [
-    //   {id: 1, from: 'Destino 1', subject: 'subjet1', content: 'Este es el contenido q debe ser mas largo'},
-    //   {id: 2, from: 'Destino 2', subject: 'subjet2', content: 'Este es el contenido q debe ser mas largo'},
-    //   {id: 3, from: 'Destino 3', subject: 'subjet3', content: 'Este es el contenido q debe ser mas largo'},
-    //   {id: 4, from: 'Destino 4', subject: 'subjet4', content: 'Este es el contenido q debe ser mas largo'}
-    // ];
-  }
+  constructor(private comprobanteService: ComprobanteService, public dialog: MatDialog, public comprobanteDetailService: ComprobanteDetailService) {}
   ngOnInit() {
     this.comprobanteDetailList = this.comprobanteDetailService.getComprobantes();
     this.comprobanteService.selectedToDelete.subscribe(
@@ -34,8 +27,8 @@ export class AppComprobanteDetailComponent implements OnInit {
     );
   }
   deleteEmitter(object) {
-    const objectList = this.comprobanteDetailList.filter(item => item.comprobante_Ruc === object.Ruc && item.comprobante_Numero === object.Numero);
-    for (let elem of objectList) {
+    const objectList = this.comprobanteDetailList.filter(item => item.comprobante_Ruc === object.ruc && item.comprobante_Numero === object.numero);
+    for (const elem of objectList) {
       const index = this.comprobanteDetailList.findIndex(item => item.comprobante_Ruc === elem.comprobante_Ruc && item.comprobante_Numero === elem.comprobante_Numero);
       this.comprobanteDetailList.splice(index, 1);
     }
@@ -53,7 +46,6 @@ export class AppComprobanteDetailComponent implements OnInit {
       .subscribe(message => {
         const index = this.comprobanteDetailList.findIndex(item => item.id === message.id);
         this.comprobanteDetailList[index] = message;
-        // this.messages.push(message);
       });
   }
   delete(object) {

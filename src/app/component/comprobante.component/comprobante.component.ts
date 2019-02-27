@@ -5,6 +5,7 @@ import { filter } from 'rxjs/operators';
 import { DialogComprobanteEditComponent } from '../../dialog/dialogComprobanteEdit/dialogComprobanteEdit';
 import { DialogComprobanteCreateComponent } from '../../dialog/dialogComprobanteCreate/dialogComprobanteCreate';
 import { ComprobanteService } from '../../services/comprobante.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-message',
@@ -12,12 +13,11 @@ import { ComprobanteService } from '../../services/comprobante.service';
   styleUrls: ['./comprobante.component.css']
 })
 export class AppMessageComponent implements OnInit {
-  pruebaList: any;
-  list: any;
+  urlComprobante = 'http://127.0.0.1:8000/rest/comprobante/';
   comprobanteList: ComprobanteModel[] = [];
   dialogComprobanteEdit: MatDialogRef<DialogComprobanteEditComponent>;
   dialogComprobanteCreate: MatDialogRef<DialogComprobanteCreateComponent>;
-  constructor(public dialog: MatDialog, private comprobanteService: ComprobanteService) {
+  constructor(private http: HttpClient, public dialog: MatDialog, private comprobanteService: ComprobanteService) {
     this.comprobanteList.push(new ComprobanteModel('1', '1', '1792231612001', '2019-01-29', 'LUIS ORLANDO', '2996500', '', '17.54000', '0.00000', '1.47000', '19.01000', '0'));
     this.comprobanteList.push(new ComprobanteModel('1790016919001', '006111000362159', '1792231612001', '2019-01-29', 'HOMERO SALAS S/N Y AV. DE LA PRENSA', '2996500', '', '17.54000', '0.00000', '1.47000', '19.01000', '0'));
     this.comprobanteList.push(new ComprobanteModel('1791414713001', '001001000039698', '1792231612001', '2019-01-29', 'Pichincha Quito Pintag Vía Pifo SN y Vía Alangasi', null, '', '151.65000', '0.00000', '7.40000', '159.05000', '0'));
@@ -27,8 +27,12 @@ export class AppMessageComponent implements OnInit {
     this.comprobanteList.push(new ComprobanteModel('2290324907001', '001001000001803', '1792231612001', '2019-01-17', 'EL COCA ', '062881715', '', '224.10000', '24.90000', '26.89000', '250.99000', '0'));
   }
   ngOnInit() {
-    this.list = this.comprobanteService.getAll();
-    console.log(this.list);
+    // this.http.get('https://restcountries.eu/rest/v2/all').toPromise()
+    // // this.http.get('http://127.0.0.1:8000/rest/comprobante/').toPromise()
+    //   .then(res => {
+    //     this.comprobanteList = res;
+    //     console.log(this.comprobanteList);
+    //   });
   }
   openDialogEdit(item) {
     this.dialogComprobanteEdit = this.dialog.open(DialogComprobanteEditComponent, {
@@ -41,13 +45,13 @@ export class AppMessageComponent implements OnInit {
       .afterClosed()
       .pipe(filter(name => name))
       .subscribe(comprobante => {
-        const index = this.comprobanteList.findIndex(object => object.Ruc === comprobante.Ruc && object.Numero === comprobante.Numero);
+        const index = this.comprobanteList.findIndex(object => object.ruc === comprobante.ruc && object.numero === comprobante.numero);
         this.comprobanteList[index] = comprobante;
         // this.comprobanteList.push(message);
       });
   }
   delete(comprobante) {
-    const index = this.comprobanteList.findIndex(item => item.Ruc === comprobante.Ruc && item.Numero === comprobante.Numero);
+    const index = this.comprobanteList.findIndex(item => item.ruc === comprobante.ruc && item.numero === comprobante.numero);
     this.comprobanteList.splice(index, 1);
 
     this.comprobanteService.selectedToDelete.emit(comprobante);
